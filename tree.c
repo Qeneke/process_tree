@@ -15,7 +15,7 @@ void createFileChild(int *pid){
   sprintf(filename, "/tmp/process_example/%d.txt", *pid);
   FILE *fp;
   fp = fopen(filename, "w+");
-  fprintf(fp, "%d", rand()%50);
+  fprintf(fp, "%d", rand()%100);
   fclose(fp);
 }
 
@@ -68,7 +68,7 @@ int main(){
   srand((unsigned)time(&t));
   int h;
   getHeight(&h);
-  for(;h>0;h--){
+  for(;h>=0;h--){
     //printf("%d", h);
     createProcess();
   }
