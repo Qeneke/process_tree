@@ -33,14 +33,14 @@ void createFileParent(int *pid, int *childPid){
   int c;
   fscanf(fp, "%d", &c);
   fclose(fp);
-  printf("child:%d\n",c);
+  printf("child(%d):%d\n",*childPid,c);
   int p = 0;
   if(access(filename, F_OK) != -1){
     fp = fopen(filename, "r");
     fscanf(fp, "%d", &p);
     fclose(fp);
   }
-  printf("parent:%d\n",p);
+  printf("parent(%d):%d\n",*pid,p);
   fp = fopen(filename, "w");
   fprintf(fp, "%d", c+p);
   fclose(fp);
