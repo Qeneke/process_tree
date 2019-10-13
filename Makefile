@@ -1,7 +1,11 @@
-all:
-	@gcc tree.c
-	@./a.out
+all: build start
+
+build: tree.c
+	@gcc $^ -o tree
+
+start:
+	@./tree
 
 clean:
 	@rm *.tmp
-	@rm a.out
+	@rm tree
