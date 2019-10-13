@@ -14,7 +14,7 @@ void getHeight(int *h){
 
 void createFileChild(int *pid){
   char filename[70];
-  sprintf(filename, "/tmp/process_example/%d.txt", *pid);
+  sprintf(filename, "%d.tmp", *pid);
   FILE *fp;
   fp = fopen(filename, "w+");
   fprintf(fp, "%d", rand()%100);
@@ -23,9 +23,9 @@ void createFileChild(int *pid){
 
 void createFileParent(int *pid, int *childPid){
   char childFilename[70];
-  sprintf(childFilename, "/tmp/process_example/%d.txt", *childPid);
+  sprintf(childFilename, "%d.tmp", *childPid);
   char filename[70];
-  sprintf(filename, "/tmp/process_example/%d.txt", *pid);
+  sprintf(filename, "%d.tmp", *pid);
   FILE *fp;
   fp = fopen(childFilename, "r");
   int c;
