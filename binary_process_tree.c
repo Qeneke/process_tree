@@ -58,11 +58,11 @@ void create_tree(int height){
       parent(pid, pid2);
     }else if(pid2 == 0){
       // child1
-      create_tree(--yukseklik);
+      create_tree(--height);
     }
   }else if(pid == 0){
     // child2
-    create_tree(--yukseklik);
+    create_tree(--height);
   }
 }
 
