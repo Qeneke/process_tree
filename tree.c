@@ -5,8 +5,10 @@
 #include <sys/wait.h>
 
 void getHeight(int *h){
-  printf("Height: ");
+  printf("Height (max. 10): ");
   scanf("%d",h);
+  if(*h>10)
+    *h = 10;
   printf("\n");
 }
 
