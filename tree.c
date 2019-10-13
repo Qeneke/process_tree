@@ -13,6 +13,8 @@ void getHeight(int *h){
 }
 
 void createFileChild(int *pid){
+  time_t t;
+  srand((unsigned)time(&t));
   char filename[70];
   sprintf(filename, "%d.tmp", *pid);
   FILE *fp;
@@ -66,8 +68,6 @@ void createProcess(){
 }
 
 int main(){
-  time_t t;
-  srand((unsigned)time(&t));
   int h;
   getHeight(&h);
   for(;h>=0;h--){
