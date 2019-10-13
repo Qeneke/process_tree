@@ -42,8 +42,8 @@ int parent(int pid, int pid2){
   printf("parent(%d): %d, left(%d): %d, right(%d): %d\n", getpid(), left+right, pid, left, pid2, right);
 }
 
-void create_tree(int yukseklik){
-  if(yukseklik == 0){
+void create_tree(int height){
+  if(height == 0){
     leaf();
     return;
   }
