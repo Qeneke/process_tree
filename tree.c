@@ -29,18 +29,18 @@ void createFileParent(int *pid, int *childPid){
   int c;
   fscanf(fp, "%d", &c);
   fclose(fp);
-  printf("C:%d\n",c);
+  printf("child:%d\n",c);
   int p = 0;
   if(access(filename, F_OK) != -1){
     fp = fopen(filename, "r");
     fscanf(fp, "%d", &p);
     fclose(fp);
   }
-  printf("P:%d\n",p);
+  printf("parent:%d\n",p);
   fp = fopen(filename, "w");
   fprintf(fp, "%d", c+p);
   fclose(fp);
-  printf("c+p:%d\n",c+p);
+  printf("parent + child:%d\n",c+p);
   printf("==================\n");
 }
 
@@ -55,7 +55,6 @@ void createProcess(){
     createFileParent(&_pid, &pid);
   }else if(pid==0){
     // child
-    //wait(NULL);
     int _pid = getpid();
     //printf("CHILD---%d\n", _pid);
     createFileChild(&_pid);
