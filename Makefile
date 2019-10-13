@@ -1,11 +1,17 @@
-all: build start
+build: tree binary_process_tree
 
-build: tree.c
-	@gcc $^ -o tree
+tree:
+	@gcc tree.c -o tree
+binary_process_tree:
+	@gcc binary_process_tree.c -o binary_process_tree
 
-start:
+start_tree:
 	@./tree
+start_binary_tree:
+	@./binary_process_tree
 
+.PHONY: clean
 clean:
-	@rm *.tmp
-	@rm tree
+	@rm -rf *.tmp
+	@rm -rf tree
+	@rm -rf binary_process_tree

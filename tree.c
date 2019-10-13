@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <time.h>
+//#include <time.h>
 #include <sys/wait.h>
 
 void getHeight(int *h){
-  printf("Height (max. 10): ");
+  printf("Height (max. 12): ");
   scanf("%d",h);
-  if(*h>10)
-    *h = 10;
+  if(*h>12)
+    *h = 12;
   printf("\n");
 }
 
 void createFileChild(int *pid){
-  time_t t;
-  srand((unsigned)time(&t));
+  srand(*pid);
   char filename[70];
   sprintf(filename, "%d.tmp", *pid);
   FILE *fp;
