@@ -7,7 +7,7 @@ binary_process_tree:
 
 start_tree:
 	@./tree
-start_binary_tree:
+start_binary_process_tree:
 	@./binary_process_tree
 
 .PHONY: clean
